@@ -1,67 +1,20 @@
-<!-- unified-readme:start -->
+<!-- jr-brand:start -->
 <div align="center">
-
-# Intune Policy Management
-
-**A local tool that fetches all Microsoft Intune policies from a tenant, automatically generates meaningful descriptions using Azure OpenAI, and analyzes policy conflicts by detecting overlapping settings across policies.**
-
-Build. Automate. Share.
-
-[![GitHub stars](https://img.shields.io/github/stars/JayRHa/IntunePolicyManagement?style=for-the-badge&logo=github&color=f4c542)](https://github.com/JayRHa/IntunePolicyManagement/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/JayRHa/IntunePolicyManagement?style=for-the-badge&logo=github&color=4078c0)](https://github.com/JayRHa/IntunePolicyManagement/network/members)
-[![GitHub issues](https://img.shields.io/github/issues/JayRHa/IntunePolicyManagement?style=for-the-badge&logo=github&color=d73a4a)](https://github.com/JayRHa/IntunePolicyManagement/issues)
-[![Contributors](https://img.shields.io/github/contributors/JayRHa/IntunePolicyManagement?style=for-the-badge&logo=github&color=28a745)](https://github.com/JayRHa/IntunePolicyManagement/graphs/contributors)
-
-![Login Screen](assets/screenshot_08_updated_policies.png)
-
-<p>
-  <a href="https://jannikreinhard.com/">Blog</a> ·
-  <a href="https://www.linkedin.com/in/jannik-r/">LinkedIn</a> ·
-  <a href="https://x.com/jannik_reinhard">X</a>
+  <a href="https://jannikreinhard.com/">
+    <img src="https://raw.githubusercontent.com/JayRHa/.github/main/assets/readme/tool.svg" alt="Jannik Reinhard — AI, Cloud and Endpoint Management" width="100%">
+  </a>
+  <h1>Intune Policy Management</h1>
+  <p><strong>Generate and manage Microsoft Intune policy descriptions with Azure OpenAI-assisted automation.</strong></p>
+  <p>
+  <a href="https://jannikreinhard.com/"><img src="https://img.shields.io/badge/Website-0A5FC0?style=flat-square&amp;logo=wordpress&amp;logoColor=white" alt="Website"></a>
+  <a href="https://github.com/JayRHa"><img src="https://img.shields.io/badge/GitHub-081427?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub"></a>
+  <a href="https://www.linkedin.com/in/jannik-r/"><img src="https://img.shields.io/badge/LinkedIn-0795FF?style=flat-square&amp;logo=linkedin&amp;logoColor=white" alt="LinkedIn"></a>
+  <a href="https://x.com/jannik_reinhard"><img src="https://img.shields.io/badge/X-081427?style=flat-square&amp;logo=x&amp;logoColor=white" alt="X"></a>
+  <a href="https://www.youtube.com/@ModernDevMgmt/featured"><img src="https://img.shields.io/badge/YouTube-0A5FC0?style=flat-square&amp;logo=youtube&amp;logoColor=white" alt="YouTube"></a>
 </p>
-
----
-
-`AI-assisted Operations` | `TypeScript` | `Public` | `Maintained`
-
+  <p><sub>Tool · App · CLI · TypeScript · Practical by design</sub></p>
 </div>
-
-## What is this?
-
-Intune Policy Management explores AI-assisted workflows where prompts, context, and automation logic help with endpoint or operations tasks.
-
-## Project Context
-
-- Use it as a reference for combining automation with model-assisted analysis or responses.
-- The important design boundary is keeping deterministic automation separate from model-generated output.
-- This repository is maintained as a practical project and reference asset.
-
-## How It Works
-
-Input is collected from the user or system, enriched with context, sent through AI-assisted processing, then converted into a recommendation, response, or automation step.
-
-```mermaid
-flowchart LR
-    Input[User or system input] --> Context[Context collection]
-    Context --> Model[AI-assisted processing]
-    Model --> Review[Validation or review]
-    Review --> Output[Recommendation or action]
-    Output --> User[User workflow]
-```
-
-## Quick Start
-
-1. Review the project context and workflow below.
-2. Clone the repository:
-
-   ```bash
-   git clone https://github.com/JayRHa/IntunePolicyManagement.git
-   ```
-
-3. Continue with the setup, usage, or workflow sections below.
-
----
-<!-- unified-readme:end -->
+<!-- jr-brand:end -->
 
 ## Table of Contents
 
@@ -78,8 +31,6 @@ flowchart LR
 11. [Troubleshooting](#troubleshooting)
 12. [Security Notes](#security-notes)
 
----
-
 ## Overview
 
 Many Intune policies have no or inadequate descriptions, and settings are often configured in multiple policies without visibility into overlaps. This tool solves both problems:
@@ -90,8 +41,6 @@ Many Intune policies have no or inadequate descriptions, and settings are often 
 4. **Compare** - Shows a before/after view (original vs. generated description)
 5. **Write Back** - Pushes selected descriptions directly back to Intune
 6. **Conflict Analysis** - Detects settings configured in multiple policies and highlights conflicts
-
----
 
 ## Architecture
 
@@ -136,8 +85,6 @@ Many Intune policies have no or inadequate descriptions, and settings are often 
 - Policy conflict analysis engine
 - LLM settings persisted locally in `llm_settings.json`
 
----
-
 ## Supported Policy Types
 
 | Policy Type | Graph API Endpoint | Read | Write |
@@ -156,8 +103,6 @@ Many Intune policies have no or inadequate descriptions, and settings are often 
 | Group Policy (ADMX) | `/deviceManagement/groupPolicyConfigurations` | Yes (incl. definition values) | Yes |
 
 > **Note:** "Write" means the description value can be updated via the Graph API using PATCH. Not all policy types support this.
-
----
 
 ## Prerequisites
 
@@ -190,8 +135,6 @@ The application uses the Microsoft Graph PowerShell app registration (Client ID:
 | `Policy.Read.All` | Read conditional access policies |
 
 > The signed-in user must have these permissions in the tenant (or an admin must consent them).
-
----
 
 ## Installation
 
@@ -236,8 +179,6 @@ cd frontend
 npm install
 ```
 
----
-
 ## Configuration
 
 ### Azure OpenAI Credentials
@@ -279,8 +220,6 @@ LLM settings (system prompt, template, custom instructions) can be adjusted via 
 {description}
 ```
 
----
-
 ## Running the Application
 
 ### Option A: Manual (recommended for development)
@@ -317,8 +256,6 @@ chmod +x start.sh
 | Frontend | http://localhost:5173 |
 | Backend API | http://localhost:8099 |
 | API Docs (Swagger) | http://localhost:8099/docs |
-
----
 
 ## Usage
 
@@ -433,8 +370,6 @@ Click **"Start Analysis"** to begin. The analyzer fetches detailed settings from
 - **Search** across setting names and policy names
 - **Expandable rows** showing each affected policy with its configured value
 - **Value comparison** with visual highlighting of differing values
-
----
 
 ## API Reference
 
@@ -587,8 +522,6 @@ All endpoints are available at `http://localhost:8099/api/`. Interactive documen
 | `GET` | `/api/settings` | Load current LLM settings |
 | `PUT` | `/api/settings` | Save LLM settings |
 
----
-
 ## Project Structure
 
 ```
@@ -693,8 +626,6 @@ IntunePolicyManagement/
 - Tracks successfully updated policies ("Updated in Intune" badge)
 - Markdown export of all descriptions
 
----
-
 ## Troubleshooting
 
 ### "Not Authenticated" even though I'm logged in
@@ -742,8 +673,6 @@ python3.13 -m venv venv
 
 Open the browser console (F12 > Console) and check for JavaScript errors. Common cause: the backend is not reachable. Make sure both servers are running.
 
----
-
 ## Security Notes
 
 - **Azure OpenAI credentials** must be configured exclusively via `.env` file or environment variables. Never hardcode them in source files.
@@ -751,3 +680,19 @@ Open the browser console (F12 > Console) and check for JavaScript errors. Common
 - The application uses the **Graph API Beta** - this can change without notice.
 - **ReadWrite permissions**: The application requests `DeviceManagementConfiguration.ReadWrite.All` to write descriptions back. This permission theoretically allows other changes - the application exclusively uses it for description updates via PATCH.
 - The application runs **locally** and only sends data to Microsoft Graph and Azure OpenAI. No data is transmitted to third parties.
+
+## License
+
+This project is available under the terms in [LICENSE](LICENSE).
+
+<!-- jr-brand-footer:start -->
+
+---
+
+<div align="center">
+  <p><sub>Built and maintained by <a href="https://jannikreinhard.com/">Jannik Reinhard</a> · Microsoft MVP for Security and AI Platform.</sub></p>
+  <p><a href="https://www.buymeacoffee.com/jannikreinf">Support the open-source work</a></p>
+  <p><strong>Stay healthy, Cheers Jannik</strong></p>
+</div>
+
+<!-- jr-brand-footer:end -->
